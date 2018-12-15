@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Roboto:100,300,400,700');
+
+@mixin roboto($size, $color) {
+  font: {
+    family: 'Roboto', sans-serif;
+    size: $size;
+    weight: 400;
+  }
+  color: $color;
+}
+
+@mixin roboto-bold($size, $color) {
+  font: {
+    family: 'Roboto', sans-serif;
+    size: $size;
+    weight: 700;
+  }
+  color: $color;
+}
+
+@mixin roboto-slab($size, $color) {
+  font: {
+    family: 'Roboto Slab', serif;
+    size: $size;
+    weight: 400;
+  }
+  color: $color;
+}
+
+@mixin roboto-slab-bold($size, $color) {
+  font: {
+    family: 'Roboto Slab', serif;
+    size: $size;
+    weight: 700;
+  }
+  color: $color;
+}
+
+/* El resto */
+
+@mixin roboto-slab-mejora-24 {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 24px;
+      weight: 700;
+    }
+    color: #00a2ff;
+}
+
+@mixin roboto-slab-mejora-18 {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 18px;
+      weight: 700;
+    }
+    color: #00a2ff;
+}
+
+@mixin roboto-slab-hotel-24-regular {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 24px;
+      weight: 400;
+    }
+    color: #003970;
+}
+
+@mixin roboto-slab-hotel-24-bold {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 24px;
+      weight: 700;
+    }
+    color: #003970;
+}
+
+@mixin roboto-slab-hotel-38-regular {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 38px;
+      weight: 400;
+    }
+    color: #06016d;
+}
+
+@mixin roboto-slab-hotel-38-bold {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 38px;
+      weight: 700;
+    }
+    color: #06016d;
+}
+
+@mixin roboto-slab-rutina-18 {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 18px;
+      weight: 700;
+    }
+    color: #06016d;
+}
+
+@mixin roboto-slab-rutina-24 {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 24px;
+      weight: 700;
+    }
+    color: #06016d;
+}
+
+@mixin roboto-slab-tab-14($color) {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 14px;
+      weight: 400;
+    }
+    color: $color;
+}
+
+@mixin roboto-slab-tab-16 {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 16px;
+      weight: 400;
+    }
+    color: #06016d;
+}
+
+@mixin roboto-slab-estancia-16 {
+    font: {
+      family: 'Roboto Slab', serif;
+      size: 16px;
+      weight: 700;
+    }
+    color: #105aa3;
+}
+
+@mixin roboto-ventaja-15 {
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 15px;
+      weight: 400;
+    }
+    color: black;
+}
+
+@mixin roboto-ventaja-25 {
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 25px;
+      weight: 400;
+    }
+    color: black;
+}
+
+@mixin roboto-regimen-16 {
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 16px;
+      weight: 400;
+    }
+    color: #06016d;
+}
+
+@mixin roboto-exclusivo-14 {
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 14px;
+      weight: 400;
+    }
+    letter-spacing: 1.52px;
+    color: white;
+}
+
+@mixin roboto-opcional-12 {
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 12px;
+      weight: 300;
+    }
+    color: #06016d;
+}
+
+@mixin roboto-cras-14 {
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 14px;
+      weight: 400;
+    }
+    color: grey;
+}

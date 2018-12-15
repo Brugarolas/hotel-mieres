@@ -1,0 +1,92 @@
+@mixin tab-shadow {
+  box-shadow: 0 1px 2px 1px $color-shadow;
+}
+
+.tabs {
+    position: absolute;
+    display : flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 0 2%;
+    width: 95%;
+    height: 60px;
+    margin: auto;
+    top: 0;
+    left: 2.5%;
+    z-index: 2;
+
+    overflow: hidden;
+    @include tab-shadow;
+    background-color: $color-white;
+    text-align: right;
+
+    .tabs__tablink {
+      background-color: $color-white;
+      outline: none;
+      border: none;
+      border-radius: 0;
+      padding: 0 50px;
+      border-bottom: 3px solid $color-white;
+      cursor: pointer;
+
+      @include roboto-slab(16px, $color-blue-light);
+      line-height: 14px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $color-background-elements;
+        border-bottom-color: $color-background-elements;
+      }
+      &.tabs__tablink--active {
+        border-bottom-color: $color-blue-dark;
+        color: $color-blue-dark;
+      }
+    }
+}
+
+.tab {
+  display: none;
+
+  box-sizing: border-box;
+  width: 95%;
+  margin: 60px 2.5% 0 2.5%;
+
+  &--active {
+    display: inline-block;
+  }
+
+  @include respond-above(laptop) {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    transform: translateX(100%);
+    transform-origin: left;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    &--active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .tab__content {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 50px;
+    border: 1px solid $color-gray-border;
+    background-color: $color-white;
+
+    &--no-borders {
+      margin-top: 0;
+      padding: 35px 20px;
+      border: none;
+      background-color: $color-background;
+      @include tab-shadow;
+    }
+  }
+}

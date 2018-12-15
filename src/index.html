@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xml:lang="es" lang="es" class="not-ie no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>HOTEL Mieres del Camín Apartamentos</title>
+
+  <meta name="description" content="META_DESCRIPCION_DEL_PROYECTO_160">
+  <meta name="keywords" content="archives, information management, public administration">
+
+  <!-- RESPONSIVE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+
+<body>
+
+  <div class="tabs">
+    <button class="tabs__tablink tabs__tablink--active" js-open-tab="tab1">Tab 1</button>
+    <button class="tabs__tablink" js-open-tab="tab2">Tab 2</button>
+  </div>
+
+  <div id="tab1" class="tab tab--active">${ require('./partials/tab1.html') }</div>
+
+  <div id="tab2" class="tab">${ require('./partials/tab2.html') }</div>
+</body>
+
+</html>

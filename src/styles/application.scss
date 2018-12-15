@@ -1,0 +1,17 @@
+@import 'base/colors.scss';
+@import 'base/fonts.scss';
+@import 'base/breakpoints.scss';
+@import 'base/grid.scss';
+@import 'app/layout.scss';
+@import 'app/tab1.scss';
+@import 'app/tab2.scss';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $color-background;
+  margin: 0;
+
+  @include respond-above(laptop) {
+    overflow-x: hidden;
+  }
+}

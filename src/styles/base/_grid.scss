@@ -1,0 +1,40 @@
+$default-grid-columns: 12;
+$default-grid-gutter: 2%;
+
+@mixin compatible-flex($grow, $shrink, $basis) {
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+
+  &--responsive {
+    flex-direction: column;
+
+    @include respond-above(laptop) {
+      flex-direction: row;
+    };
+  }
+
+  &--responsive-mobile {
+    flex-direction: column;
+
+    @include respond-above(mobile) {
+      flex-direction: row;
+    };
+  }
+
+  > .grid__col--equal {
+    box-sizing: border-box;
+    -webkit-flex: 1; /* Safari 6.1+ */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1;
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
+  }
+}
