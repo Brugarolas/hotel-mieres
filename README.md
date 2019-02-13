@@ -2,6 +2,8 @@
 
 > Small test made with SASS and jQuery by Andrés Brugarolas
 
+> [Try it here!](https://brugarolas.github.io/hotel-mieres/)
+
 ## Build Setup
 
 ``` bash

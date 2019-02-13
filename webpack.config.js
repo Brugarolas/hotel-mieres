@@ -3,7 +3,9 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isProduction = process.env.NODE_ENV === 'production';
+const { NODE_ENV, PUBLIC_PATH } = process.env;
+const isProduction = NODE_ENV === 'production';
+const publicPath = isProduction ? '/' + (PUBLIC_PATH ? PUBLIC_PATH + '/' : '') : '/';
 
 module.exports = {
   entry: './src/js/index.js',
@@ -11,7 +13,7 @@ module.exports = {
   stats: { children: false },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/',
+    publicPath: publicPath,
     filename: 'js/bundle.js?[hash]'
   },
   module: {
@@ -32,8 +34,7 @@ module.exports = {
         exclude: /node_modules/,
         options: {
           presets: [
-            'minify',
-            [ '@babel/env', { 'targets': { 'browsers': [ 'last 2 versions' ] }, useBuiltIns: 'usage', modules: false } ]
+            [ '@babel/env', { targets: { browsers: [ 'last 2 versions' ] }, useBuiltIns: 'usage', modules: false } ]
           ]
         }
       },
@@ -89,8 +90,10 @@ module.exports = {
   }
 };
 
-if (!isProduction) {
-  module.exports.devServer = {
-    contentBase: './dist',
-  }
+if (isProduction) {
+  module.exports.mode = 'production';
+
+  // Add babel-minify preset only in production
+  const babelRules = module.exports.module.rules.find(rule => rule.loader === 'babel-loader');
+  babelRules.options.presets.unshift([ 'minify', { builtIns: false } ]);
 }
